@@ -1,0 +1,65 @@
+{
+  "name": "{{name}}",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "description": "{{description}}",
+  "keywords": [],
+  "files": [
+    "lib/"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "*",
+    "babel-cli": "*",
+    "babel-jest": "*",
+    "babel-preset-forbeslindesay": "*",
+    "eslint": "*",
+    "eslint-config-forbeslindesay": "*",
+    "flowgen2": "*",
+    "husky": "*",
+    "jest": "*",
+    "lint-staged": "*",
+    "prettier": "*",
+    "ts-jest": "*",
+    "typescript": "*"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "prepublish": "npm run build",
+    "prettier": "prettier --parser typescript --single-quote --trailing-comma all --no-bracket-spacing --write \"src/**/*.js\"",
+    "prettier:check": "prettier --parser typescript --single-quote --trailing-comma all --no-bracket-spacing --list-different \"src/**/*.js\"",
+    "build": "tsc && flowgen lib/**/*",
+    "test": "jest ./src --coverage",
+    "watch": "jest ./src --coverage --watch"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --parser typescript --single-quote --trailing-comma all --no-bracket-spacing --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/*.test.(ts|tsx|js)"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/{{owner}}/{{name}}.git"
+  },
+  "author": {
+    "name": "Forbes Lindesay",
+    "url": "http://github.com/ForbesLindesay"
+  },
+  "license": "MIT"
+}

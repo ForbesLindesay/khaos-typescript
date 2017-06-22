@@ -1,0 +1,32 @@
+
+schema:
+
+  owner:
+    type: string
+    label: Owner
+    hint: (eg. ForbesLindesay)
+    required: true
+
+  name:
+    type: string
+    label: Name
+    hint: (eg. my-project)
+    required: true
+
+  camelCaseName:
+    type: string
+    label: Camel Case Name
+    hint: (eg. myProject)
+    required: true
+
+  description:
+    type: string
+    label: description
+    hint: (eg. My awesome project)
+    required: true
+
+  year:
+    type: number
+    label: Year
+    hint: (eg. 2017)
+    required: true
