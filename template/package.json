@@ -22,15 +22,15 @@
   "scripts": {
     "precommit": "lint-staged",
     "prepublish": "npm run build",
-    "prettier": "prettier --parser typescript --single-quote --trailing-comma all --no-bracket-spacing --write \"src/**/*.{ts,tsx}\"",
-    "prettier:check": "prettier --parser typescript --single-quote --trailing-comma all --no-bracket-spacing --list-different \"src/**/*.{ts,tsx}\"",
+    "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "prettier:check": "prettier --list-different \"src/**/*.{ts,tsx}\"",
     "build": "tsc && flowgen lib/**/*",
     "test": "jest ./src --coverage",
     "watch": "jest ./src --coverage --watch"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "prettier --parser typescript --single-quote --trailing-comma all --no-bracket-spacing --write",
+      "prettier --write",
       "git add"
     ]
   },
